@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#e0e0e0"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/forecastDate"
+
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/forecastDescription"
+
+        android:layout_below="@id/forecastDate"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="italic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+        <LinearLayout
+            android:id="@+id/lltemp"
+            android:layout_below="@id/forecastDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="30dp"
+            android:orientation="horizontal">
+
+
+            <com.github.pwittchen.weathericonview.WeatherIconView
+                android:id="@+id/tempForecastIcon"
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="3"
+                app:weatherIconColor="#616161"
+                app:weatherIconResource="@string/wi_thermometer"
+                app:weatherIconSize="20" />
+
+
+            <TextView
+                android:id="@+id/minTempText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:textSize="20sp"
+
+                android:textColor="#1a237e" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/dotsTempText"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"
+                android:text="..."
+                 />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/maxTempText"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#870101" />
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/lltemp"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+                <com.github.pwittchen.weathericonview.WeatherIconView
+                    android:id="@+id/sunriseForecastIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:weatherIconResource="@string/wi_sunrise"
+                    app:weatherIconColor="@color/colorIconFragment"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    app:weatherIconSize="20"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/sunriseForecastText"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_gravity="center_vertical"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+                <com.github.pwittchen.weathericonview.WeatherIconView
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/humidityForecastIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:weatherIconResource="@string/wi_humidity"
+                    app:weatherIconColor="@color/colorIconFragment"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    app:weatherIconSize="20"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:id="@+id/humidityForecastText"
+                    android:layout_gravity="center_vertical"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+                <com.github.pwittchen.weathericonview.WeatherIconView
+                    android:id="@+id/precipForecastIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:weatherIconResource="@string/wi_raindrops"
+                    app:weatherIconColor="@color/colorIconFragment"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    app:weatherIconSize="20"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/precipForecastText"
+                    android:layout_marginStart="3dp"
+                    android:layout_gravity="center_vertical"/>
+
+            </TableRow>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:orientation="horizontal">
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+                <com.github.pwittchen.weathericonview.WeatherIconView
+                    android:id="@+id/sunsetForecastIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:weatherIconResource="@string/wi_sunset"
+                    app:weatherIconColor="@color/colorIconFragment"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    app:weatherIconSize="20"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:id="@+id/sunsetForecastText"
+                    android:layout_gravity="center_vertical"/>
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+                <com.github.pwittchen.weathericonview.WeatherIconView
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/visForecastIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:weatherIconResource="@string/wi_alien"
+                    app:weatherIconColor="@color/colorIconFragment"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    app:weatherIconSize="20"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:id="@+id/visForecastText"
+                    android:layout_gravity="center_vertical"/>
+            </TableRow>
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+                <com.github.pwittchen.weathericonview.WeatherIconView
+                    android:id="@+id/windForecastIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:weatherIconResource="@string/wi_strong_wind"
+                    app:weatherIconColor="@color/colorIconFragment"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    app:weatherIconSize="20"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/windForecastText"
+                    android:layout_marginStart="3dp"
+                    android:layout_gravity="center_vertical"/>
+            </TableRow>
+        </LinearLayout>
+    </LinearLayout>
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:weatherIconColor="#909090"
+        app:weatherIconResource="@string/wi_direction_left"
+        app:weatherIconSize="15"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5dp"/>
+    <com.github.pwittchen.weathericonview.WeatherIconView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_centerVertical="true"
+        app:weatherIconColor="#909090"
+        app:weatherIconResource="@string/wi_direction_right"
+        app:weatherIconSize="15" />
+
+</RelativeLayout>
